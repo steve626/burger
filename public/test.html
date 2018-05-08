@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="row">
+                <div class="col-4-md">
+                    <div class="panel-panel default">
+                        <ul class="list-group">
+                            {{#each burgers}}
+                                {{#unless this.devoured}}
+                                <li class="list-group-item">
+                                    <div class="input-group">
+                                        <p class="lead">{{this.burger_name}}</p>
+                                        <span class="input-group=btn">
+                                            <form action="bugers/update{{this.id}}?_method=PUT" method="POST">
+                                            <input type="hidden" name="devoured" value="true">
+                                                <button class="btn btn-danger btn-lg" type="submit">FINISH IT!</button>
+                                            </form>
+                                        </span>
+                                    </div>
+                                </li>
+                                {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+</body>
+<style>
+    .jumbotron {
+    text-align: center;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .bg-cover {
+    background-size: cover;
+    color: white;
+    background-position: center center;
+    position: relative;
+    z-index: -2;
+    background-image: url(./img/burger-png-18.png);    
+  }
+  
+  .overlay {
+    background-color: #000;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  body {
+      background-color: rgb(236, 240, 26);
+  }
+
+</style>
+</html>
