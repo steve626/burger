@@ -6,9 +6,9 @@ var port = process.env.PORT || 1337;
 
 var app = express();
 
-app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + 'public'));
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 //override with POST
 app.use(methodOverride('_method'));
@@ -21,8 +21,6 @@ app.set('view engine', 'handlebars');
 var router = require('./controllers/burgers_controller.js');
 
 app.use(router);
-
-
 
 // Start our server so that it can begin listening to client requests.
 app.listen(port, function() {

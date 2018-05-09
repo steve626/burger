@@ -31,9 +31,9 @@
                         <div class="input-group">
                             <p class="lead">{{this.burger_name}}</p>
                             <span class="input-group=btn">
-                                <form action="burgers/updateOne/{{this.id}}?_method=PUT" method="POST">
+                                <form action="/burger/create/{{this.id}}?_method=PUT" method="POST">
                                 <input type="hidden" name="devoured" value="true">
-                                    <button class="btn btn-danger btn-lg" type="submit">FINISH IT!</button>
+                                    <button class="btn btn-danger btn-lg" type="submit">EAT THAT BURGER!</button>
                                 </form>
                             </span>
                         </div>
