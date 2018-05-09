@@ -41,7 +41,7 @@ function printQuestionMarks(num) {
 
 var orm = {
     selectAll: function(tableInput, callback){
-        var queryString = 'SELECT * FROM ' + tableInput + ';';
+        var queryString = 'SELECT * FROM burgers;';
         connection.query(queryString, function(err, data){
             if (err) {
                 throw err;
