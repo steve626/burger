@@ -1,8 +1,10 @@
 var connection = require("./connection.js");
 
+
+
 var orm = {
-    selectAll: function(table, callback){
-        var queryString = 'SELECT * FROM' + table;
+    selectAll: function(callback){
+        var queryString = 'SELECT * FROM burgers';
 
         connection.query(queryString, function(err, data){
             if (err) throw err;
@@ -10,23 +12,25 @@ var orm = {
         });
     },
 
-    insertOne: function(table, column, newBurger, callback){
-        var queryString = 'INSERT INTO' + table + '(' + column + ') VALUES (?)';
+    insertOne: function(burger_name, callback){
+        //var queryString = 'INSERT INTO burgers SET ?';
 
-        connection.query(queryString, [newBurger], function(err,data){
+        connection.query('INSERT INTO burgers SET ?',{
+            burger_name: burger_name,
+            devoured: false
+        }, function(err,data){
             if (err) throw err;
             callback(data);
         });
     },
 
-    updateOne: function(table, col, colVal, condition, conditionVal, callback){
-        var queryString = 'UPDATE' + table + 'SET' + col + '=?' + 'WHERE' + condition + '=?';
-
-        connection.query(queryString, [colVal, conditionVal], function(err, data){
+  updateOne: function(burgerID, callback){
+            connection.query('UPDATE burbers SET ?? WHERE ?',
+        [{devoured: true}, {id: burgerID}], function(err,result){
             if(eff) throw err;
             callback(data);
         });    
     }
 };
 
-module.export = orm;
+module.exports = orm;
