@@ -4,7 +4,7 @@ var connection = require("./connection.js");
 
 var orm = {
     selectAll: function(callback){
-        var queryString = 'SELECT * FROM burgers';
+        var queryString = 'SELECT * FROM burgers;';
 
         connection.query(queryString, function(err, data){
             if (err) throw err;
@@ -25,9 +25,9 @@ var orm = {
     },
 
   updateOne: function(burgerID, callback){
-            connection.query('UPDATE burbers SET ?? WHERE ?',
+            connection.query('UPDATE burgers SET ?? WHERE ?',
         [{devoured: true}, {id: burgerID}], function(err,result){
-            if(eff) throw err;
+            if(err) throw err;
             callback(data);
         });    
     }
