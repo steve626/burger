@@ -13,7 +13,7 @@ router.get('/burgers', function(req, res){
         var hbsObject = {
             burger: data
         };
-        console.log('brg_con ln12: ' + hbsObject);
+        console.log('brg_con ln12: ' + hbsObject.burger_name);
         res.render('index', hbsObject);
     });
 });
