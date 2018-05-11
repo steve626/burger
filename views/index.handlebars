@@ -1,13 +1,10 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron bg-cover">
   <div class="container">
-      <div class="jumbotron jumbotron bg-cover">
-  <div class="overlay"></div>
-    <h1 class="display-4">Eat-Da-Burger!</h1>
-
+    <div class="overlay"></div>
+    <h1 class="display-2">Eat-Da-Burger!</h1>
     <p class="lead">Enter the burgers that you want to eat, and then DEVOUR THEM!!!1!</p>
     </div>
   </div>
-</div>
 <div class = "container" id="addBurger">
     <div class="col-md-10">
 <form>
@@ -17,7 +14,7 @@
     <small id="burger" class="form-text text-muted">Meat not required!</small>
   </div>
   
-  <button type="submit" class="btn btn-warning">add your burger</button>
+  <button type="submit" id="addBurger" class="btn btn-warning">add your burger</button>
         </form>
     </div>
 </div>
@@ -33,7 +30,7 @@
                             <span class="input-group=btn">
                                 <form action="/burger/create/{{this.id}}_method=PUT" method="POST">
                                 <input type="hidden" name="devoured" value="true">
-                                    <button class="btn btn-danger btn-lg" type="submit">EAT THAT BURGER!</button>
+                                    <button class="btn btn-danger btn-lg" id="devour" type="submit">EAT THAT BURGER!</button>
                                 </form>
                             </span>
                         </div>

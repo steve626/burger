@@ -10,11 +10,11 @@ router.get('/', function(req, res){
 
 router.get('/burgers', function(req, res){
     burger.selectAll(function(data){
-        var hbsObject = {
+        var burgers = {
             burger: data
         };
-        console.log('brg_con ln12: ' + hbsObject.burger_name);
-        res.render('index', hbsObject);
+        console.log('brg_con ln12: ' + JSON.stringify(burgers.burger));
+        res.render('index', burgers);
     });
 });
 

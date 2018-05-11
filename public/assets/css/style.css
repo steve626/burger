@@ -3,15 +3,17 @@
     padding-top: 10rem;
     padding-bottom: 10rem;
     text-shadow: 2px 2px #000;
+    z-index: 0;
   }
   
   .bg-cover {
     background-size: cover;
-    color: white;
+    color: whitesmoke;
     background-position: center center;
     position: relative;
     z-index: -2;
-    background-image: url(./img/burger-png-18.png);    
+    background-image: url("../img/burger-png-18.png");   
+    background-repeat: no-repeat; 
   }
   
   .overlay {
